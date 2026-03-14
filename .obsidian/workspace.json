@@ -1,0 +1,196 @@
+{
+  "main": {
+    "id": "37135df762fd1e44",
+    "type": "split",
+    "children": [
+      {
+        "id": "9546163cf5caea9e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed7bf2acbca3c490",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "10b62d982a76e0c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "09b643d2946ff91e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4e6efad006a313e2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "16c05f46137d30b0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "9799af2b68ee9279",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "98b45710cfc72a53",
+    "type": "split",
+    "children": [
+      {
+        "id": "107446f5e135a6e6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ec4d6e868f90578e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2026-01-27.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "2026-01-27 的反向链接列表"
+            }
+          },
+          {
+            "id": "156a81b9d6b300b0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2026-01-27.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "2026-01-27 的出链列表"
+            }
+          },
+          {
+            "id": "681cf02250e8200f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "8dab55663c5a20c3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "c61b6e094460c578",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2026-01-27.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "2026-01-27 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "ed7bf2acbca3c490",
+  "lastOpenFiles": [
+    "从 LSVI-UCB 到 LSVI-UCB++.md",
+    "GEMINI.md",
+    "AGENTS.md",
+    "CODEX.md",
+    "Bandit algorithm- Chapter 2 foundation of probability.md",
+    "2026-01-27.md",
+    "2026-01-29.md",
+    "2026-03-03-英语写作专项.md",
+    "archieve/未命名.md",
+    "archieve",
+    "desktop.ini"
+  ]
+}
