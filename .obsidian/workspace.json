@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9546163cf5caea9e",
+        "id": "2d97ea92215380d4",
         "type": "tabs",
         "children": [
           {
-            "id": "ed7bf2acbca3c490",
+            "id": "802ed4702c2d41e9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -90,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2026-01-27.md",
+                "file": "从 LSVI-UCB 到 LSVI-UCB++.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "2026-01-27 的反向链接列表"
+              "title": "从 LSVI-UCB 到 LSVI-UCB++ 的反向链接列表"
             }
           },
           {
@@ -179,15 +179,16 @@
       "bases:新建数据库": false
     }
   },
-  "active": "ed7bf2acbca3c490",
+  "active": "802ed4702c2d41e9",
   "lastOpenFiles": [
-    "从 LSVI-UCB 到 LSVI-UCB++.md",
     "GEMINI.md",
     "AGENTS.md",
-    "CODEX.md",
     "Bandit algorithm- Chapter 2 foundation of probability.md",
     "2026-01-27.md",
+    "CODEX.md",
     "2026-01-29.md",
+    "从 LSVI-UCB 到 LSVI-UCB++.md",
+    "tmp.md",
     "2026-03-03-英语写作专项.md",
     "archieve/未命名.md",
     "archieve",

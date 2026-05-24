@@ -1,0 +1,4 @@
+interface:
+  display_name: "错题卡制作"
+  short_description: "用于生成、复盘、修订和复习错题本里的学术推导训练题卡"
+  default_prompt: "Use $cuoti-card to create, revise, or review an Obsidian mistake-notebook card for this project."
