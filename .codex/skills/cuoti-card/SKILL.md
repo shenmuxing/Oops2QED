@@ -15,10 +15,18 @@ Before and after modifying any Markdown file, run a strict UTF-8 decode check an
 
 ## File Rules
 
-- Create new Codex-authored card files as `codex_YYYY-MM-DD.md`.
-- Append multiple cards to the same dated file in chronological order.
+- Organize cards by source or series first, then by chapter or section when useful, for example `rltheorybook/Chapter 1 - Fundamentals/`.
+- Name new dated card files as `YYYY-MM-DD.md`. Do not encode the authoring agent in the filename.
+- Append multiple cards from the same date and folder to the same dated file in chronological order.
+- If one date in the same folder must be split into several files, use `YYYY-MM-DD-short-topic.md` with a short lowercase ASCII topic slug.
 - Do not rewrite historical card text unless the user explicitly asks. For substantive corrections, add a dated "修订版" card.
 - Preserve compatibility with existing Obsidian callout cards.
+
+## Source References
+
+- When the user names a book, paper, or shorthand source, first check `.codex/skills/cuoti-card/references/book-sources.md` for the canonical local path and fallback URL. Paths listed there are relative to the repository root unless marked absolute.
+- Prefer local files when available. If the local file is missing or unreadable, use the listed online fallback and clearly report that fallback.
+- When creating a card from a referenced source, include enough source context in `出处` for later lookup, such as source key, chapter, section, page, or exercise number when available.
 
 ## Card Template
 
