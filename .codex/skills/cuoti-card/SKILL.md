@@ -25,6 +25,7 @@ Before and after modifying any Markdown file, run a strict UTF-8 decode check an
 ## Source References
 
 - When the user names a book, paper, or shorthand source, first check `.codex/skills/cuoti-card/references/book-sources.md` for the canonical local path and fallback URL. Paths listed there are relative to the repository root unless marked absolute.
+- Treat shorthand aliases in `book-sources.md` as canonical. In particular, `jiacai, 2026` means the recently added PhD thesis listed as the primary thesis under `policy-gradient-policy-iteration`.
 - Prefer local files when available. If the local file is missing or unreadable, use the listed online fallback and clearly report that fallback.
 - When creating a card from a referenced source, include enough source context in `出处` for later lookup, such as source key, chapter, section, page, or exercise number when available.
 
