@@ -2,6 +2,21 @@
 
 Use this index when a card request names a book, paper, or shorthand source. Prefer the local file first; use the fallback URL only when the local source is unavailable or cannot be read.
 
+Default placement rule: only sources with an explicit `Note folder` below, or sources the user explicitly says should be a standalone体系, get a dedicated folder. Standalone papers without such a folder belong to the repository-root regular dated-card system.
+
+## regular-papers
+
+- Default note folder: repository root, using regular dated cards like `YYYY-MM-DD.md`.
+- Title: A Diffusion Analysis of Policy Gradient for Stochastic Bandits
+- Author: Tor Lattimore
+- Local path (absolute): `D:\ProgramData\OnedriveData\OneDrive\文档\zotero\storage\DLC6PFM7\Lattimore - 2026 - A Diffusion Analysis of Policy Gradient for Stochastic Bandits.pdf`
+- Zotero item: `HU7I7KHR`
+- Zotero attachment: `DLC6PFM7`
+- Fallback URL: `https://arxiv.org/pdf/2603.10219`
+- Existing cards: `2026-06-19.md` for Algorithm 2 and Lemma 1; `2026-06-22.md` for Lemma 2.
+- Aliases: `lattimore diffusion`, `diffusion bandits`, `A diffusion analysis of policy gradient for stochastic bandits`, `arXiv:2603.10219`
+- Notes: Use this source for continuous-time softmax policy-gradient bandit diffusion, conservation of softmax parameters, and Lemma 2-style lower-tail control of theta coordinates. Keep cards in the root regular system unless the user explicitly asks for a dedicated folder.
+
 ## rltheorybook
 
 - Title: Reinforcement Learning Theory

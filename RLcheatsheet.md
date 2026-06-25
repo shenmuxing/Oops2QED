@@ -165,20 +165,9 @@ $$
 When $k$ is large enough, $V_k$ approximates $V^\star$, and the greedy policy $\pi_k$ approximates an optimal policy.
 
 Main known-model planning facts:
-
-- VI has no learning regret by itself; it assumes $P,r$ are known.
 - The Bellman optimality operator is a $\gamma$-contraction.
-- For $Q$-value iteration $Q^{(k+1)}=\mathcal{T}Q^{(k)}$ with $Q^{(0)}=0$, the greedy policy is $\epsilon$-optimal once
-
-$$
-k
-\ge
-\frac{\log\frac{2}{(1-\gamma)^2\epsilon}}{1-\gamma}.
-$$
-
 - Per iteration, the usual tabular update costs about $|\mathcal{S}|^2|\mathcal{A}|$.
 - For exact optimal planning with rational $(P,r,\gamma)$, the book's table records VI complexity roughly
-
 $$
 |\mathcal{S}|^2|\mathcal{A}|\,L(P,r,\gamma)
 \log\frac{1}{1-\gamma},
@@ -215,23 +204,16 @@ V_0^{\pi^k}(s_0)
 $$
 
 At the start of episode $k$, form counts from previous episodes:
-
 $$
-N_h^k(s,a,s')
-=
-\sum_{i=0}^{k-1}
-\mathbf{1}\{(s_h^i,a_h^i,s_{h+1}^i)=(s,a,s')\},
+N_h^k(s,a,s') =
+\sum_{i=0}^{k-1} \mathbf{1}\{(s_h^i,a_h^i,s_{h+1}^i)=(s,a,s')\},
 $$
-
 $$
-N_h^k(s,a)
-=
-\sum_{i=0}^{k-1}
-\mathbf{1}\{(s_h^i,a_h^i)=(s,a)\}.
+N_h^k(s,a) =
+\sum_{i=0}^{k-1} \mathbf{1}\{(s_h^i,a_h^i)=(s,a)\}.
 $$
 
 The empirical transition model is
-
 $$
 \widehat P_h^k(s'\mid s,a)
 =
@@ -454,3 +436,133 @@ $$
 In value iteration, the max operator appears inside every value update.
 
 In policy iteration, the max operator appears only in the policy improvement step.
+
+## Offline RL Landscape
+
+Offline RL learns a policy only from a fixed dataset
+
+$$
+\mathcal{D}=\{(s,a,r,s')\},
+$$
+
+with no new environment interaction. The dataset may come from suboptimal behavior policies.
+
+Central problem: standard off-policy Bellman backups can query out-of-distribution actions:
+
+$$
+Q(s,a)\leftarrow r(s,a)+\gamma\mathbb{E}_{s'\sim P(\cdot\mid s,a)}
+\left[\max_{a'}Q(s',a')\right].
+$$
+
+The maximizing $a'$ may not be supported by $\mathcal{D}$, so Q-values can be overestimated. In online RL, bad overestimates can be corrected by trying the action; in offline RL, they are propagated without corrective feedback.
+
+Main slogan:
+
+$$
+\text{maximize return while staying close to the dataset.}
+$$
+
+### Policy Constraint Methods
+
+Add a behavior regularizer or constraint to the actor:
+
+$$
+\max_\theta\;
+\mathbb{E}_{s\sim\mathcal{D},a\sim\pi_\theta(\cdot\mid s)}
+[Q(s,a)]
+-
+\alpha D(\pi_\theta(\cdot\mid s),\pi_\beta(\cdot\mid s)),
+$$
+
+or constrain $D(\pi_\theta,\pi_\beta)\le \epsilon$.
+
+Here $\pi_\beta$ is the behavior policy of the dataset. The regularization strength is usually a sensitive hyperparameter.
+
+KL choices:
+
+- Forward KL $D_{\mathrm{KL}}(\pi_\beta\|\pi_\theta)$ is mode-covering.
+- Reverse KL $D_{\mathrm{KL}}(\pi_\theta\|\pi_\beta)$ is mode-seeking.
+- Offline RL often wants mode-seeking behavior, because not every dataset mode is good.
+
+### AC+BC
+
+Forward-KL regularization gives actor-critic plus behavior cloning:
+
+$$
+\max_\theta\;
+\mathbb{E}_{s\sim\mathcal{D},a\sim\pi_\theta}
+[Q(s,a)]
++
+\alpha\mathbb{E}_{s,a\sim\mathcal{D}}[\log\pi_\theta(a\mid s)].
+$$
+
+Interpretation: keep the usual actor objective, then add a BC term. Simple and strong, but the BC coefficient matters a lot.
+
+### AWR
+
+Reverse-KL constrained improvement gives the closed-form target policy
+
+$$
+\pi^\star(a\mid s)
+\propto
+\exp\left(\frac{1}{\lambda}Q(s,a)\right)\pi_\beta(a\mid s).
+$$
+
+Practical policy extraction becomes advantage-weighted behavior cloning:
+
+$$
+\max_\theta\;
+\mathbb{E}_{(s,a)\sim\mathcal{D}}
+\left[
+\exp\left(\frac{1}{\lambda}A(s,a)\right)
+\log\pi_\theta(a\mid s)
+\right].
+$$
+
+Interpretation: imitate dataset actions, but give much more weight to high-advantage actions.
+
+### IQL
+
+IQL avoids querying $Q$ on OOD actions. Instead of
+
+$$
+\max_{a'}Q(s',a'),
+$$
+
+use an in-sample value function:
+
+$$
+Q(s,a)\leftarrow r(s,a)+\gamma V(s'),
+$$
+
+and fit $V$ as a high expectile of in-dataset $Q(s,a)$:
+
+$$
+\min_V\;
+\mathbb{E}_{(s,a)\sim\mathcal{D}}
+\left[\ell_\tau^2(V(s)-Q(s,a))\right],
+\qquad
+\tau\in[0.5,1).
+$$
+
+$\tau=0.5$ is mean regression; $\tau\to 1$ approaches a max. Policy extraction is often AWR-style.
+
+### CQL
+
+CQL implements pessimism: lower Q-values for actions not supported by the dataset.
+
+Basic conservative regularizer:
+
+$$
+\min_Q\;
+\text{Bellman error}
++
+\alpha
+\left(
+\mathbb{E}_{s\sim\mathcal{D},a\sim\mu(\cdot\mid s)}[Q(s,a)]
+-
+\mathbb{E}_{(s,a)\sim\mathcal{D}}[Q(s,a)]
+\right).
+$$
+
+The first term pushes down broad / OOD actions; the second term pushes up in-dataset actions. Result: learned policies are discouraged from exploiting unsupported high Q-values.

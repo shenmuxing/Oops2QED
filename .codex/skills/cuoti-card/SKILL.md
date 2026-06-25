@@ -16,6 +16,7 @@ Before and after modifying any Markdown file, run a strict UTF-8 decode check an
 ## File Rules
 
 - Organize cards by source or series first, then by chapter or section when useful, for example `rltheorybook/Chapter 1 - Fundamentals/`.
+- Only create a dedicated source or series folder when the user explicitly requests it or the source map marks a dedicated note folder. Otherwise keep standalone papers in the repository root as regular dated cards.
 - Name new dated card files as `YYYY-MM-DD.md`. Do not encode the authoring agent in the filename.
 - Append multiple cards from the same date and folder to the same dated file in chronological order.
 - If one date in the same folder must be split into several files, use `YYYY-MM-DD-short-topic.md` with a short lowercase ASCII topic slug.
