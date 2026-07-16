@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5fdb751c62df04ee",
+        "id": "cabaee25dfb9cda7",
         "type": "tabs",
         "children": [
           {
-            "id": "72256dcf2306c02b",
+            "id": "f6e42b0d070425b9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "stochastic-process/2026-07-15.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "2026-07-15"
             }
           }
         ]
@@ -179,26 +183,36 @@
       "bases:新建数据库": false
     }
   },
-  "active": "72256dcf2306c02b",
+  "active": "f6e42b0d070425b9",
   "lastOpenFiles": [
-    "RL cheatsheet.md",
+    "未命名.base",
+    "tmp/pdfs/chihao-lec1-etc/page-11.png",
+    "tmp/pdfs/chihao-lec1-etc/page-10.png",
+    "tmp/pdfs/chihao-lec1-etc/page-09.png",
+    "tmp/pdfs/chihao-lec1-etc",
+    "tmp/pdfs",
+    "tmp",
+    "stochastic-process/2026-07-15.md",
+    "rltheorybook/2026-01-27.md",
+    "RLcheatsheet.md",
+    "local/offline-rl/cs285-lec-18.pdf",
+    "local/offline-rl/cs285-lec-17.pdf",
+    "README.md",
+    "local/offline-rl/cs285-section-9.pdf",
+    "2026-01-27.md",
     "rltheorybook/Coverage - Chapter 5 and Chapter 9/Chapter 5 - Statistical Limits of Generalization/2026-06-02.md",
     "rltheorybook/Coverage - Chapter 5 and Chapter 9/Chapter 9 - Generalization with Bounded Bilinear Rank",
     "rltheorybook/Coverage - Chapter 5 and Chapter 9/Chapter 5 - Statistical Limits of Generalization",
     "rltheorybook/Coverage - Chapter 5 and Chapter 9",
-    "2026-01-27.md",
     "policy-gradient-policy-iteration/Chapter 3 - Direct Parameterization Policy Gradient/2026-06-12.md",
     "local/rltheorybook.pdf",
     "rltheorybook/Chapter 1 - Fundamentals/2026-05-28.md",
     "rltheorybook/Chapter 4 - Fitted Dynamic Programming Methods/2026-06-01.md",
-    "rltheorybook/Chapter 4 - Fitted Dynamic Programming Methods",
     "rltheorybook/Chapter 1 - Fundamentals/2026-05-27.md",
     "rltheorybook/Chapter 2 - Sample Complexity with a Generative Model/2026-05-30.md",
     "rltheorybook/Chapter 1 - Fundamentals/2026-05-26.md",
     "rltheorybook/Chapter 1 - Fundamentals/2026-05-24.md",
     "rltheorybook/Chapter 1 - Fundamentals/codex_2026-05-24.md",
-    "rltheorybook/Chapter 1 - Fundamentals",
-    "rltheorybook",
     "GEMINI.md",
     "AGENTS.md",
     "Bandit algorithm- Chapter 2 foundation of probability.md",
@@ -207,8 +221,6 @@
     "从 LSVI-UCB 到 LSVI-UCB++.md",
     "tmp.md",
     "2026-03-03-英语写作专项.md",
-    "archieve/未命名.md",
-    "archieve",
-    "desktop.ini"
+    "archieve/未命名.md"
   ]
 }
